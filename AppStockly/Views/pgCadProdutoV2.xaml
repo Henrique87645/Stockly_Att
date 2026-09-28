@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppStockly.Views.pgCadProdutoV2"
+             Title="pgCadProdutoV2">
+    
+    <ScrollView>
+
+            <StackLayout VerticalOptions="Start"
+                HorizontalOptions="Fill">
+
+                <Image x:Name="imgFundoSuperior"
+                   Source="fundo.png"
+                   HeightRequest="180"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Start"
+                   Rotation="180"
+                   Aspect="AspectFill"/>
+
+
+                <!-- Conteúdo da tela -->
+                <StackLayout HorizontalOptions="Center"
+                    Padding="20,0,20,0">
+
+                    <Image Source="iconstockly.png"
+                       HeightRequest="100"
+                       HorizontalOptions="Center"
+                       Margin="0,-180,0,0"/>
+
+                    <Label Text="Login"
+                       FontSize="30"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       Margin="0,0,0,15"/>
+
+
+                    <Frame BackgroundColor="White"
+                       BorderColor="Black"
+                       WidthRequest="300">
+                        <StackLayout>
+
+                            <!--produto-->
+                            <Label Text="Nome do produto"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtProduto"
+                               TextColor="Black"
+                               Placeholder="Ex: Teclado Mecânico RGB"
+                               MaxLength="50"
+                               ClearButtonVisibility="WhileEditing"
+                               Text="{Binding Produto}"/>
+
+                            <Label x:Name="lblValidationNome"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoNomeProduto}"
+                               Text="{Binding MensagemValidacaoNomeProduto}"/>
+
+                        <!--modelo-->
+                        <Label Text="Modelo"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                        <Entry x:Name="txtModelo"
+                               TextColor="Black"
+                               Placeholder="Ex: Teclado Mecânico RGB"
+                               MaxLength="50"
+                               ClearButtonVisibility="WhileEditing"
+                               Text="{Binding Modelo}"/>
+
+                        <Label x:Name="lblValidationModelo"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoModelo}"
+                               Text="{Binding MensagemValidacaoModelo}"/>   
+
+                        <!--codigo-->
+
+                            <Label Text="Código do produto"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtCodigo"
+                               TextColor="Black"
+                               Placeholder="Ex: TEC-001"
+                               MaxLength="15"
+                               ClearButtonVisibility="WhileEditing"
+                               Text="{Binding Codigo}"/>
+
+                            <Label x:Name="lblValidationCodigo"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoCodigo}"
+                               Text="{Binding MensagemValidacaoCodigo}"/>
+
+
+                            <!--fornecedor -->
+
+                            <Label Text="Fornecedor"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtFornecedor"
+                               TextColor="Black"
+                               Placeholder="Ex: Tech Distribuidora"
+                               MaxLength="50"
+                               ClearButtonVisibility="WhileEditing"
+                                       Text="{Binding Fornecedor}"/>
+
+                            <Label x:Name="lblValidationFornecedor"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoFornecedor}"
+                               Text="{Binding MensagemValidacaoFornecedor}"/>
+
+
+                            <!--qtd-->
+
+                            <Label Text="Quantidade em estoque"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtQuantidade"
+                               TextColor="Black"
+                               Placeholder="Ex: 50"
+                               Keyboard="Numeric"
+                               MaxLength="5"
+                               ClearButtonVisibility="WhileEditing"
+                                       Text="{Binding Quantidade}"/>
+
+                            <Label x:Name="lblValidationQuantidade"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoQuantidade}"
+                               Text="{Binding MensagemValidacaoQuantidade}"/>
+
+
+                            <!--compra-->
+
+                            <Label Text="Preço de compra"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtPrecoCompra"
+                               TextColor="Black"
+                               Placeholder="Ex: 150,00"
+                               Keyboard="Numeric"
+                               MaxLength="10"
+                               ClearButtonVisibility="WhileEditing"
+                                      Text="{Binding PrecoCompra}"/>
+
+                            <Label x:Name="lblValidationPrecoCompra"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoPrecoCompra}"
+                               Text="{Binding MensagemValidacaoPrecoCompra}"/>
+
+
+                            <!--preço-->
+
+                            <Label Text="Preço de venda"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtPrecoVenda"
+                               TextColor="Black"
+                               Placeholder="Ex: 220,00"
+                               Keyboard="Numeric"
+                               MaxLength="10"
+                               ClearButtonVisibility="WhileEditing"
+                                       Text="{Binding PrecoVenda}"/>
+
+                            <Label x:Name="lblValidationPrecoVenda"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoPrecoVenda}"
+                               Text="{Binding MensagemValidacaoPrecoVenda}"/>
+
+
+                            <!--estoque minimo-->
+
+                            <Label Text="Estoque mínimo"
+                               FontAttributes="Bold"
+                               TextColor="#0E2356"/>
+
+                            <Entry x:Name="txtEstoqueMinimo"
+                               TextColor="Black"
+                               Placeholder="Ex: 5"
+                               Keyboard="Numeric"
+                               MaxLength="5"
+                               ClearButtonVisibility="WhileEditing"
+                                       Text="{Binding EstoqueMinimo}"/>
+
+                            <Label x:Name="lblValidationEstoqueMinimo"
+                               TextColor="#D32F2F"
+                               FontSize="12"
+                               IsVisible="{Binding ExibirMensagemValidacaoEstoqueMinimo}"
+                               Text="{Binding MensagemValidacaoEstoqueMinimo}"/>
+
+
+                            <Button Text="Cadastrar Produto"
+                                FontAttributes="Bold"
+                                FontSize="16"
+                                TextColor="White"
+                                BackgroundColor="DarkBlue"
+                                CornerRadius="12"
+                                HeightRequest="55"
+                                Margin="0,15,0,25"
+                                Command="{Binding SalvarCommand}"/>
+
+                        <Button Text="Voltar"
+                                 FontAttributes="Bold"
+                                 FontSize="16"
+                                 TextColor="White"
+                                 BackgroundColor="DarkBlue"
+                                 CornerRadius="12"
+                                 HeightRequest="55"
+                                 Margin="0,15,0,25"
+                                 Command="{Binding VoltarCommand}"/>
+
+                    </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+    </ScrollView>
+</ContentPage>

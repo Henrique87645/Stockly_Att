@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppStockly.pgPrincipal"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="White">
+    <ScrollView>
+        <StackLayout VerticalOptions="Start"
+                 HorizontalOptions="Fill">
+            
+            <Image x:Name="imgFundoSuperior"
+                   Source="fundo.png"
+                   HeightRequest="180"
+                   HorizontalOptions="Fill"
+                   VerticalOptions="Start"
+                   Rotation="180"
+                   Aspect="AspectFill"/>
+            
+
+            <!-- Conteúdo da tela -->
+            <StackLayout HorizontalOptions="Center"
+                     Padding="20,0,20,0">
+
+                <Image Source="iconstockly.png"
+                   HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Margin="-370,-160,0,0"/>
+
+                <!--
+                <Label Text="Bem vindo a Stockly"
+                   FontSize="30"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   Margin="40,-70,0,15"/>
+                -->
+            </StackLayout>
+            
+            <Button Text="Cadastro de produtos"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    CornerRadius="12"
+                    HeightRequest="55"
+                    Margin="0,20,0,0"
+                    Clicked="btnCadProduto_Clicked"/>
+
+            <Button Text="Lista de Produtos"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    CornerRadius="12"
+                    HeightRequest="55"
+                    Margin="0,20,0,0"
+                    Clicked="btnListaProduto_Clicked"/>
+
+            <Image x:Name="imgFundo"
+                       Source="fundo.png"
+                       HeightRequest="180"
+                       HorizontalOptions="Fill"
+                       VerticalOptions="End"
+                       Aspect="AspectFill"
+                       Margin="0,400,0,0"/>
+          
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
